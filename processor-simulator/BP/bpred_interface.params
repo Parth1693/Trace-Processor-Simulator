@@ -1,0 +1,49 @@
+
+//
+// Size of Q for remembering outstanding predictions
+//
+#define MAX_Q_DEPTH_b	1024
+#define MAX_Q_MASK_b	1023
+
+//////////////////////////////////
+// Gshare predictor (2^16)
+//////////////////////////////////
+
+//
+// BTB configuration
+//
+#define BTB_SIZE	0x1000
+#define BTB_MASK	0xfff
+
+//
+// Predictor configuration
+//
+#define TABLE_SIZE	0x10000
+#define INDEX_MASK	0xffff
+
+#define HIST_MASK	0xfffc
+#define HIST_BIT	0x8000
+#define PC_MASK		0x3fff
+
+
+#if 0
+//////////////////////////////////
+// Simple predictor (2K bimodal)
+//////////////////////////////////
+
+//
+// BTB configuration
+//
+#define BTB_SIZE	0x800
+#define BTB_MASK	0x7ff
+
+//
+// Predictor configuration
+//
+#define TABLE_SIZE	BTB_SIZE
+#define INDEX_MASK	BTB_MASK
+
+#define HIST_MASK	0x000
+#define HIST_BIT	0x400
+#define PC_MASK		INDEX_MASK
+#endif
